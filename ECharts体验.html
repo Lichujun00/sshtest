@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ECharts体验</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+    <!-- 下载并引用Echarts文件 -->
+    <script src="../练习/js/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 定义一个空间盒子来装ECharts图表，找个盒子必须具备宽高大小 -->
+    <div class="box"></div>
+
+    <script>
+            //初始化ECharts实例化对象
+        var myChart = echarts.init(document.querySelector('.box'));
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
